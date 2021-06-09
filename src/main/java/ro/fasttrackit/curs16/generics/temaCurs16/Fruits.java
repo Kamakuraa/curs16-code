@@ -1,9 +1,9 @@
 package ro.fasttrackit.curs16.generics.temaCurs16;
 
 public abstract class Fruits implements ShopItem{
-    private String name;
-    private int price;
-    private Category category;
+    private final String name;
+    private final int price;
+    private final Category category;
 
     public Fruits(String name, int price, Category category) {
         this.name = name;
@@ -17,12 +17,12 @@ public abstract class Fruits implements ShopItem{
     }
 
     @Override
-    public int[] getPrice() {
-        return new int[0];
+    public int getPrice() {
+        return 0;
     }
 
     @Override
     public Category category() {
-        return null;
+        return category;
     }
 }

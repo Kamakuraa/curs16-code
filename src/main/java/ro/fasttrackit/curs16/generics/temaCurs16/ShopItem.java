@@ -6,10 +6,10 @@ import java.util.Objects;
 public interface ShopItem {
     String getName();
 
-    int[] getPrice();
+    int getPrice();
 
     Category category();
 
 
-    <T> void add(T shopClothes);
+
 }
