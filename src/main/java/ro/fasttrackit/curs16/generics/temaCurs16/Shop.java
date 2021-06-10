@@ -14,7 +14,6 @@ public class Shop<T extends ShopItem> {
         return object;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

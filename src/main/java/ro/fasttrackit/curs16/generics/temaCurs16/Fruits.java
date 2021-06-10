@@ -1,6 +1,8 @@
 package ro.fasttrackit.curs16.generics.temaCurs16;
 
-public abstract class Fruits implements ShopItem{
+import java.util.Objects;
+
+public abstract class Fruits implements ShopItem {
     private final String name;
     private final int price;
     private final Category category;
@@ -24,5 +26,28 @@ public abstract class Fruits implements ShopItem{
     @Override
     public Category category() {
         return category;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Fruits fruits = (Fruits) o;
+        return price == fruits.price && Objects.equals(name, fruits.name) && category == fruits.category;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, price, category);
+    }
+
+    @Override
+    public String toString() {
+        return "Fruits{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", category=" + category +
+                '}';
     }
 }
